@@ -1,3 +1,4 @@
+using System;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ namespace Client {
                 .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ())
 #endif
                 .Init ();
+            Destroy(Prefabs);//удаляем из оперативной памяти
         }
 
         void Update () 
@@ -45,10 +47,41 @@ namespace Client {
         public void Init(IEcsSystems systems)
         {
             Prefabs pref = systems.GetShared<Prefabs>();
+            EcsWorld world = systems.GetWorld();
+            EcsPool<BushStats> pool = world.GetPool<BushStats>();
+            
             for (int i = 0; i < 1; i++)
             {
+                int entity = world.NewEntity();
+                ref BushStats stats = ref pool.Add(entity);
                 Bush bush = GameObject.Instantiate(pref.Bush);
             }
         }
+        public struct BushStats
+        {
+            public int PunchCost;
+        }
+    }
+    public class BushPunch : IEcsRunSystem, IEcsInitSystem
+    {
+        private EcsFilter filter;
+
+        public void Init(IEcsSystems systems)
+        {
+            EcsWorld world = systems.GetWorld();
+            filter = world.Filter<Punch>().End();
+        }
+
+        public void Run(IEcsSystems systems)
+        {
+            foreach (var entity in filter)
+            {
+                
+            }
+        }
+    }
+
+    public struct Punch
+    {
     }
 }
