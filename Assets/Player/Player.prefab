@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3702072339895502762}
   - component: {fileID: 6271358414475389723}
   - component: {fileID: 693336673186829449}
-  - component: {fileID: 8550838155334299266}
+  - component: {fileID: 8595413464959661718}
   m_Layer: 0
-  m_Name: Bush
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8550838155334299266
+--- !u!114 &8595413464959661718
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +115,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7459934701903816731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba267c0e8ec4535acd6f7451aec175e, type: 3}
+  m_Script: {fileID: 11500000, guid: 86231d8c4c92449a821bd51b8a4d2b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

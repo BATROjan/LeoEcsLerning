@@ -1,4 +1,5 @@
 using System;
+using Client.Player;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -12,9 +13,8 @@ namespace Client {
             _world = new EcsWorld ();
             _systems = new EcsSystems (_world, Prefabs);
             _systems
-                // register your systems here, for example:
-                 .Add (new BushInitialize ())
-                 //.Add (new TestSystem2 ())
+                 .Add (new PlayerInitializeSystem())
+                 .Add (new PlayerMovementSystem())
                 
 #if UNITY_EDITOR
                 .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ())
@@ -42,7 +42,7 @@ namespace Client {
         }
     }
 
-    internal class BushInitialize : IEcsInitSystem
+   /* internal class BushInitialize : IEcsInitSystem
     {
         public void Init(IEcsSystems systems)
         {
@@ -74,6 +74,8 @@ namespace Client {
 
         public void Run(IEcsSystems systems)
         {
+
+            }
             foreach (var entity in filter)
             {
                 
@@ -83,5 +85,5 @@ namespace Client {
 
     public struct Punch
     {
-    }
+    }*/
 }
