@@ -1,33 +1,39 @@
-﻿using Leopotam.EcsLite;
+﻿using Client.InputSystem;
+using Client.Point.Scripts;
+using Leopotam.EcsLite;
 using UnityEngine;
 
 namespace Client.Player
 {
     public class PlayerMovementSystem : IEcsRunSystem
     {
-        private EcsFilter _filter;
+        private EcsFilter _playerFilter; // фильтр для игрока
+        private EcsPool<PlayerComponent> _transformPool;
+        private EcsPool<PointComponent> _targetPool;
 
         public void Run(IEcsSystems systems)
         {
             EcsWorld world = systems.GetWorld();
-            _filter = world.Filter<PlayerComponent>().End();
-            if (Input.GetMouseButtonDown(0))
+
+            // Обновляем фильтры
+            _playerFilter = world.Filter<PlayerComponent>().End();
+
+            // Получаем пулы компонентов
+            _transformPool = world.GetPool<PlayerComponent>();
+            _targetPool = world.GetPool<PointComponent>();
+
+            foreach (var entity in _playerFilter)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
+                // Проверяем, есть ли у сущности цель
+                if (_targetPool.Has(entity))
                 {
-                    if (hit.collider.gameObject.tag == "Finish")
-                    {
-                        foreach (var i in _filter)
-                        {
-                            ref var transformComp = ref world.GetPool<PlayerComponent>().Get(i);
-                            transformComp.Transform.position = hit.collider.transform.position;
-                        }
+                    Debug.Log("AAAAAAAAA");
+                    var targetTransform = _targetPool.Get(entity).Transform;
+                    var transformComponent = _transformPool.Get(entity);
+                    var playerTransform = transformComponent.Transform;
 
-                        Debug.Log("Объект попал в луч: " + hit.collider.gameObject.name);
-                    }
+                    // Расстояние до цели
+                    float distance = Vector3.Distance(playerTransform.position, targetTransform.position);
                 }
             }
         }

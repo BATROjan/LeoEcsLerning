@@ -1,5 +1,7 @@
 using System;
+using Client.InputSystem;
 using Client.Player;
+using Client.Point.Scripts;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -13,8 +15,11 @@ namespace Client {
             _world = new EcsWorld ();
             _systems = new EcsSystems (_world, Prefabs);
             _systems
+                 .Add (new KeyboardInputSystem())
                  .Add (new PlayerInitializeSystem())
                  .Add (new PlayerMovementSystem())
+                 .Add (new PointInitSystem())
+                 //.Add (new PlayerMovementSystem())
                 
 #if UNITY_EDITOR
                 .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ())
