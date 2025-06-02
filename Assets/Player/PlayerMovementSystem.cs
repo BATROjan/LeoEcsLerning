@@ -9,7 +9,7 @@ namespace Client.Player
     {
         private EcsFilter _playerFilter; // фильтр для игрока
         private EcsPool<PlayerComponent> _transformPool;
-        private EcsPool<PointComponent> _targetPool;
+        private EcsPool<InputComponent> _targetPool;
 
         public void Run(IEcsSystems systems)
         {
@@ -20,20 +20,18 @@ namespace Client.Player
 
             // Получаем пулы компонентов
             _transformPool = world.GetPool<PlayerComponent>();
-            _targetPool = world.GetPool<PointComponent>();
-
-            foreach (var entity in _playerFilter)
+            _targetPool = world.GetPool<InputComponent>();
+            if (Input.GetMouseButtonDown(0))
             {
-                // Проверяем, есть ли у сущности цель
-                if (_targetPool.Has(entity))
+                foreach (var entity in _playerFilter)
                 {
-                    Debug.Log("AAAAAAAAA");
-                    var targetTransform = _targetPool.Get(entity).Transform;
-                    var transformComponent = _transformPool.Get(entity);
-                    var playerTransform = transformComponent.Transform;
+                        Debug.Log("AAAAAAAAA");
+                        var targetTransform = _targetPool.Get(0).TargetTransform;
+                       // var transformComponent = _transformPool.Get(entity);
+                        var playerTransform = targetTransform;
 
-                    // Расстояние до цели
-                    float distance = Vector3.Distance(playerTransform.position, targetTransform.position);
+                        // Расстояние до цели
+                       // float distance = Vector3.Distance(playerTransform.position, targetTransform.position);
                 }
             }
         }

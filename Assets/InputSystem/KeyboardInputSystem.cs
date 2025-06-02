@@ -10,6 +10,7 @@ namespace Client.InputSystem
         public void Init(IEcsSystems systems)
         {
             EcsWorld world = systems.GetWorld();
+            systems.GetShared<InputData>();
             EcsPool<InputComponent> pool = world.GetPool<InputComponent>();
             int entity = world.NewEntity();
             ref InputComponent transformComponent = ref pool.Add (entity);
@@ -19,6 +20,8 @@ namespace Client.InputSystem
         {
             EcsWorld world = systems.GetWorld();
             _filter = world.Filter<InputComponent>().End();
+            InputData inputData = systems.GetShared<InputData>();
+            
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
