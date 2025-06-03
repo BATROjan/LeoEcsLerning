@@ -1,4 +1,5 @@
 using System;
+using Client.Bush;
 using Client.InputSystem;
 using Client.Player;
 using Client.Point.Scripts;
@@ -19,7 +20,8 @@ namespace Client {
                  .Add (new PlayerInitializeSystem())
                  .Add (new PlayerMovementSystem())
                  .Add (new PointInitSystem())
-                 //.Add (new PlayerMovementSystem())
+                 //.Add (new PlayerMovementSystem()) ДОДЕЛАТЬ
+                 .Add(new BushInitSystem())
                 
 #if UNITY_EDITOR
                 .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ())

@@ -7,31 +7,23 @@ namespace Client.Player
 {
     public class PlayerMovementSystem : IEcsRunSystem
     {
-        private EcsFilter _playerFilter; // фильтр для игрока
-        private EcsPool<PlayerComponent> _transformPool;
+        private EcsFilter _playerFilter; 
         private EcsPool<InputComponent> _targetPool;
-
+        private Transform target;
+        
         public void Run(IEcsSystems systems)
         {
             EcsWorld world = systems.GetWorld();
-
-            // Обновляем фильтры
+            
             _playerFilter = world.Filter<PlayerComponent>().End();
-
-            // Получаем пулы компонентов
-            _transformPool = world.GetPool<PlayerComponent>();
             _targetPool = world.GetPool<InputComponent>();
-            if (Input.GetMouseButtonDown(0))
+            
+            if (target != _targetPool.Get(0).TargetTransform)//убрать 0 и сделать нормальный id
             {
                 foreach (var entity in _playerFilter)
                 {
-                        Debug.Log("AAAAAAAAA");
-                        var targetTransform = _targetPool.Get(0).TargetTransform;
-                       // var transformComponent = _transformPool.Get(entity);
-                        var playerTransform = targetTransform;
-
-                        // Расстояние до цели
-                       // float distance = Vector3.Distance(playerTransform.position, targetTransform.position);
+                    ref var transformComp = ref world.GetPool<PlayerComponent>().Get(entity);
+                    transformComp.Transform.position = _targetPool.Get(0).TargetTransform.position;//убрать 0 и сделать нормальный id
                 }
             }
         }
