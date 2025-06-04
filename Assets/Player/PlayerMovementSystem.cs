@@ -1,5 +1,6 @@
 ﻿using Client.InputSystem;
 using Client.Point.Scripts;
+using DG.Tweening;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -18,12 +19,18 @@ namespace Client.Player
             _playerFilter = world.Filter<PlayerComponent>().End();
             _targetPool = world.GetPool<InputComponent>();
             
-            if (target != _targetPool.Get(0).TargetTransform)//убрать 0 и сделать нормальный id
+            if (_targetPool.Get(0).TargetTransform != null)//убрать 0 и сделать нормальный id
             {
                 foreach (var entity in _playerFilter)
                 {
                     ref var transformComp = ref world.GetPool<PlayerComponent>().Get(entity);
-                    transformComp.Transform.position = _targetPool.Get(0).TargetTransform.position;//убрать 0 и сделать нормальный id
+                   // transformComp.Transform.DOLookAt(_targetPool.Get(0).TargetTransform.position, 1)
+                      //  .SetEase(Ease.Linear);
+                    Sequence seq = DOTween.Sequence();
+                    seq
+                        .Append(transformComp.Transform.DOLookAt(_targetPool.Get(0).TargetTransform.position, 1).SetEase(Ease.Linear))
+                        .Append(transformComp.Transform.DOMove(_targetPool.Get(0).TargetTransform.position, 2).SetEase(Ease.Linear));//убрать 0 и сделать нормальный id
+                    _targetPool.Get(0).TargetTransform = null;
                 }
             }
         }

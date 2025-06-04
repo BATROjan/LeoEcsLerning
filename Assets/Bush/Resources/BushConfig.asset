@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   models:
   - id: 0
-    position: {x: 4.18, y: 0.62, z: -2.79}
+    position: {x: 5.3, y: 0.62, z: -3.33}
   - id: 1
-    position: {x: -3.99, y: 0.62, z: -2.79}
+    position: {x: -4.62, y: 0.62, z: -3.33}
   - id: 2
-    position: {x: -3.99, y: 0.62, z: 0.58}
+    position: {x: -4.62, y: 0.62, z: 0.58}
   - id: 3
-    position: {x: 4.18, y: 0.62, z: 0.58}
+    position: {x: 5.3, y: 0.62, z: 0.58}
