@@ -15,6 +15,8 @@ namespace Client.Player
             ref PlayerComponent transformComponent = ref pool.Add (entity);
             Player player = GameObject.Instantiate(pref.Player);
             transformComponent.Transform = player.transform;
+            transformComponent.Animator = player.GetComponent<Animator>();
+            transformComponent.Rigidbody = player.GetComponent<Rigidbody>();
         }
     }
 }

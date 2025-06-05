@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8598906802396419902}
   - component: {fileID: 6008794270038755065}
+  - component: {fileID: 2974972922075303152}
+  - component: {fileID: 2303056047139167232}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -45,6 +47,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86231d8c4c92449a821bd51b8a4d2b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2974972922075303152
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360038233444509756}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2faa610713d3b3c439473daa55e8c60a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3121c787870a88e4aa403ea9321da720, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &2303056047139167232
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360038233444509756}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &4674160763252862389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53,6 +103,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8598906802396419902}
     m_Modifications:
+    - target: {fileID: 1104346649488452835, guid: bb96394e9629f20408ea23d3760ba123, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3121c787870a88e4aa403ea9321da720, type: 2}
     - target: {fileID: 5978688025392802851, guid: bb96394e9629f20408ea23d3760ba123, type: 3}
       propertyPath: m_Name
       value: Human_BasicMotionsDummy_M

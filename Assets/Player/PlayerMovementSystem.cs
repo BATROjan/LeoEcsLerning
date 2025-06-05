@@ -11,6 +11,8 @@ namespace Client.Player
         private EcsFilter _playerFilter; 
         private EcsPool<InputComponent> _targetPool;
         private Transform target;
+        private DOTween tween;
+        private Animator anim;
         
         public void Run(IEcsSystems systems)
         {
@@ -24,13 +26,26 @@ namespace Client.Player
                 foreach (var entity in _playerFilter)
                 {
                     ref var transformComp = ref world.GetPool<PlayerComponent>().Get(entity);
-                   // transformComp.Transform.DOLookAt(_targetPool.Get(0).TargetTransform.position, 1)
-                      //  .SetEase(Ease.Linear);
-                    Sequence seq = DOTween.Sequence();
-                    seq
-                        .Append(transformComp.Transform.DOLookAt(_targetPool.Get(0).TargetTransform.position, 1).SetEase(Ease.Linear))
-                        .Append(transformComp.Transform.DOMove(_targetPool.Get(0).TargetTransform.position, 2).SetEase(Ease.Linear));//убрать 0 и сделать нормальный id
-                    _targetPool.Get(0).TargetTransform = null;
+                    Quaternion targetRotation = Quaternion.LookRotation(_targetPool.Get(0).TargetTransform.position);
+                    transformComp.Transform.rotation = Quaternion.Slerp(transformComp.Transform.rotation,
+                        targetRotation,
+                        5 * Time.deltaTime);
+                    Vector3 directionToTarget = _targetPool.Get(0).TargetTransform.position - transformComp.Transform.position;
+                    float angle = Vector3.Angle(transformComp.Transform.forward, directionToTarget);
+                    Debug.Log(angle);
+
+                    if (angle <= 2)
+                    {
+                        Vector3 direction = (_targetPool.Get(0).TargetTransform.position - transformComp.Transform.position).normalized;
+                        transformComp.Rigidbody.MovePosition(transformComp.Transform.position + direction * 1 * Time.deltaTime);
+                        Debug.Log((_targetPool.Get(0).TargetTransform.position - transformComp.Transform.position).magnitude);
+
+                        if ((_targetPool.Get(0).TargetTransform.position - transformComp.Transform.position).magnitude < 0.1f)
+                        {
+                            _targetPool.Get(0).TargetTransform = null; 
+                            Debug.Log("AAAAAAAAAAAA");
+                        }
+                    }
                 }
             }
         }
