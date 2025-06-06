@@ -26,6 +26,8 @@ namespace Client.Player
                 foreach (var entity in _playerFilter)
                 {
                     ref var transformComp = ref world.GetPool<PlayerComponent>().Get(entity);
+                    transformComp.Transform.position = _targetPool.Get(0).TargetTransform.position;
+                    /*ref var transformComp = ref world.GetPool<PlayerComponent>().Get(entity);
                     Quaternion targetRotation = Quaternion.LookRotation(_targetPool.Get(0).TargetTransform.position);
                     transformComp.Transform.rotation = Quaternion.Slerp(transformComp.Transform.rotation,
                         targetRotation,
@@ -45,7 +47,7 @@ namespace Client.Player
                             _targetPool.Get(0).TargetTransform = null; 
                             Debug.Log("AAAAAAAAAAAA");
                         }
-                    }
+                    }*/
                 }
             }
         }

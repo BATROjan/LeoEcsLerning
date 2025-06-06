@@ -1,8 +1,10 @@
 using System;
 using Client.Bush;
+using Client.Coins;
 using Client.InputSystem;
 using Client.Player;
 using Client.Point.Scripts;
+using Client.UI;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -20,6 +22,8 @@ namespace Client {
                  .Add (new PlayerInitializeSystem())
                  .Add (new PlayerMovementSystem())
                  .Add (new PointInitSystem())
+                 .Add (new CoinSystem())
+                 .Add (new UISystem())
                  //.Add (new PlayerMovementSystem()) ДОДЕЛАТЬ
                  .Add(new BushInitSystem())
                 
