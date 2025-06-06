@@ -19,7 +19,7 @@ namespace Client.UI
            int entity = world.NewEntity();
            GameUIComponent gameUIComponent = pool.Add (entity);
            gameUIComponent.CoinText = ui.GetComponentInChildren<Text>();
-           storage.OnAddCoin += (coins) =>
+           storage.OnAddCoin += (coins) =>                                    //нет отписки
            {
                gameUIComponent.CoinText.text = $"Score {coins}";
            };
