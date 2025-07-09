@@ -1,4 +1,5 @@
-﻿using Client.Player;
+﻿using Client.Bush;
+using Client.Player;
 using Client.Point.Scripts;
 using Client.UI;
 using UnityEngine;
@@ -9,5 +10,6 @@ using UnityEngine;
         public Player Player;
         public Point Point;
         public Client.Bush.Bush Bush;
+        public BushPoint BushPoint;
         public GameUI GameUI;
     }

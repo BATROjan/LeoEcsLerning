@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: BushConfig
   m_EditorClassIdentifier: 
   models:
-  - id: 0
-    position: {x: 5.3, y: 0.62, z: -3.33}
-  - id: 1
-    position: {x: -4.62, y: 0.62, z: -3.33}
-  - id: 2
-    position: {x: -4.62, y: 0.62, z: 0.58}
-  - id: 3
-    position: {x: 5.3, y: 0.62, z: 0.58}
+  - Type: 0
+    BushPrefab: {fileID: 2712789698590736711, guid: b44bc3d938ae78344993e3a25c8c0753, type: 3}
+  - Type: 1
+    BushPrefab: {fileID: 2712789698590736711, guid: 68ed39d00425e114eb7f74b22377ae57, type: 3}
+  - Type: 2
+    BushPrefab: {fileID: 2712789698590736711, guid: 60e35e8ada39e08438b1268844bcd567, type: 3}
+  - Type: 3
+    BushPrefab: {fileID: 2712789698590736711, guid: e9af9953c4419c744a1582e568cad66a, type: 3}

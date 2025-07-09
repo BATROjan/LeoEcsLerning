@@ -9,16 +9,33 @@ namespace Client.Bush
     { 
         [SerializeField] private BushModel[] models;
 
-        public BushModel GetModel(int id)
+        public BushModel GetModelByType(BushType type)
         {
-            return models[id];
+            var model = new BushModel();
+            foreach (var bushModel in models)
+            {
+                if (bushModel.Type == type)
+                {
+                    model = bushModel;
+                }
+            }
+            return model;
         }
     }
     
     [Serializable]
     public struct BushModel
     {
-        public int id;
-        public Vector3 position;
+        public BushType Type;
+        public Bush BushPrefab;
+    }
+    
+    [Serializable]
+    public enum BushType
+    {
+    Mini,
+    Normal,
+    Two,
+    Big
     }
 }
