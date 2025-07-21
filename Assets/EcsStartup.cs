@@ -21,11 +21,11 @@ namespace Client {
                  .Add (new KeyboardInputSystem())
                  .Add (new PlayerInitializeSystem())
                  .Add (new PlayerMovementSystem())
-                 .Add (new PointInitSystem())
+                 //.Add (new PointInitSystem())
                  .Add (new CoinSystem())
                  .Add (new UISystem())
                  //.Add (new PlayerMovementSystem()) ДОДЕЛАТЬ
-                 .Add(new BushInitSystem())
+                 .Add(new BushSystem())
                 
 #if UNITY_EDITOR
                 .Add (new Leopotam.EcsLite.UnityEditor.EcsWorldDebugSystem ())

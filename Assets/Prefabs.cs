@@ -9,7 +9,7 @@ using UnityEngine;
     {
         public Player Player;
         public Point Point;
-        public Client.Bush.Bush Bush;
+        public Bush Bush;
         public BushPoint BushPoint;
         public GameUI GameUI;
     }

@@ -14,10 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   models:
   - Type: 0
-    BushPrefab: {fileID: 2712789698590736711, guid: b44bc3d938ae78344993e3a25c8c0753, type: 3}
+    BushPrefab: {fileID: 1685276279349370865, guid: b44bc3d938ae78344993e3a25c8c0753, type: 3}
+    AddScoreCount: 1
+    TimeToAddScore: 3
   - Type: 1
-    BushPrefab: {fileID: 2712789698590736711, guid: 68ed39d00425e114eb7f74b22377ae57, type: 3}
+    BushPrefab: {fileID: 3777880374165405415, guid: 68ed39d00425e114eb7f74b22377ae57, type: 3}
+    AddScoreCount: 2
+    TimeToAddScore: 5
   - Type: 2
     BushPrefab: {fileID: 2712789698590736711, guid: 60e35e8ada39e08438b1268844bcd567, type: 3}
+    AddScoreCount: 3
+    TimeToAddScore: 7
   - Type: 3
     BushPrefab: {fileID: 2712789698590736711, guid: e9af9953c4419c744a1582e568cad66a, type: 3}
+    AddScoreCount: 4
+    TimeToAddScore: 8

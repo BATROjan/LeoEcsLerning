@@ -1,4 +1,5 @@
 ﻿using System;
+using Client.Bush;
 using UnityEngine;
 
 namespace Client.Point
@@ -19,5 +20,6 @@ namespace Client.Point
     {
         public int id;
         public Vector3 position;
+        public BushType Type;
     }
 }

@@ -14,9 +14,11 @@ namespace Client.Point.Scripts
             for (int i = 0; i < 4; i++)
             {
                 int entity = world.NewEntity();
-                ref PointComponent transformComponent = ref pool.Add (entity);
+                ref PointComponent pointComponent = ref pool.Add (entity);
                 Point point = GameObject.Instantiate(pref.Point);
-                point.transform.position = pointConfig.GetModel(i).position;;
+                point.transform.position = pointConfig.GetModel(i).position;
+                pointComponent.Type = pointConfig.GetModel(i).Type;
+                pointComponent.Transform = point.transform;
             }
         }
     }

@@ -4,7 +4,7 @@ namespace Client.Bush
 {
     public struct BushPointComponent
     {
-        public Transform Transform;
+        public Bush Bush;
         public BushType Type;
     }
 }

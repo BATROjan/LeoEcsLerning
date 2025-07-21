@@ -9,7 +9,7 @@ namespace Client.Bush
     {
         [SerializeField] private BushPoinModel[] models;
 
-        public BushPoinModel GetModel(int id)
+        public BushPoinModel GetModelByID(int id)
         {
             return models[id];
         }

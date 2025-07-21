@@ -15,9 +15,13 @@ MonoBehaviour:
   points:
   - id: 0
     position: {x: 3.857277, y: 0.0000004768372, z: -3.261066}
+    Type: 0
   - id: 1
     position: {x: -3.11, y: 0.0000004768372, z: -3.16}
+    Type: 1
   - id: 2
     position: {x: -3.11, y: 0.0000004768372, z: 0.88}
+    Type: 2
   - id: 3
     position: {x: 3.857277, y: 0.0000004768372, z: 0.88}
+    Type: 3

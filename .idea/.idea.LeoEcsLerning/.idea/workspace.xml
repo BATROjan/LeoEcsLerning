@@ -5,20 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7543697-3f04-45a2-92c4-6dbdc34df5a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPoint.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPoint.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointComponent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointConfig.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LeoEcsLerning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LeoEcsLerning/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bush/Resources/Bush.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bush/Resources/Bush.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bush/Resources/BushConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Resources/BushConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Resources/BushMini.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Resources/BushMini.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Resources/BushNormal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Resources/BushNormal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Resources/BushPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Resources/BushPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushInitSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushInitSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushInitSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushInitSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bush/Scripts/BushPointConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EcsStartup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EcsStartup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Point/Resources/PointConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Point/Resources/PointConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Point/Scripts/PointComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Point/Scripts/PointComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Point/Scripts/PointConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Point/Scripts/PointConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Point/Scripts/PointInitSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Point/Scripts/PointInitSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +37,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/54724222b7684530a2810ae1eac94ec7176000/00/1a0a96aa/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InputData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -52,7 +59,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.5019763&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.50155765&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -96,10 +103,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16700">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16700" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -130,7 +137,11 @@
       <workItem from="1749127534090" duration="988000" />
       <workItem from="1749199724079" duration="3055000" />
       <workItem from="1751968323597" duration="3457000" />
-      <workItem from="1752038287515" duration="891000" />
+      <workItem from="1752038287515" duration="3672000" />
+      <workItem from="1752208998064" duration="4946000" />
+      <workItem from="1752307107083" duration="1103000" />
+      <workItem from="1752392574078" duration="2624000" />
+      <workItem from="1752405069657" duration="870000" />
     </task>
     <servers />
   </component>

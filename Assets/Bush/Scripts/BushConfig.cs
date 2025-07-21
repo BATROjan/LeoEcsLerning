@@ -28,6 +28,8 @@ namespace Client.Bush
     {
         public BushType Type;
         public Bush BushPrefab;
+        public int AddScoreCount;
+        public float TimeToAddScore;
     }
     
     [Serializable]
